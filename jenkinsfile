@@ -74,7 +74,7 @@ echo "====++++manage execution failed++++===="
 }
 stage("build"){
 steps{
-sh "python run -it -p 0.0.0.0:8732"
+sh "python manage.py runserver 0.0.0.0:8732"
 
 post{
 
