@@ -23,22 +23,7 @@ echo "====++++docker container execution failed++++===="
 }
 }
 }
-stage("clone"){
-steps{
-git "https://github.com/varunlamp/semaphore-demo-python-django.git"
 
-post{
-
-success{
-echo "====++++clone executed successfully++++===="
-}
-failure{
-echo "====++++clone execution failed++++===="
-}
-
-}
-}
-}
 stage("dependency"){
 
 steps{
