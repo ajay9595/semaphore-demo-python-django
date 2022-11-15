@@ -7,12 +7,12 @@ stages{
 
 stage("docker container"){
 steps{
-sh "docker run -it -p 8732:8732 python:3.10-buster "
-
+sh "docker run -itd -p 8732:8732 --name semaphore python:3.10-buster "
 post{
 
 success{
 echo "====++++docker container executed successfully++++===="
+sh " docker exec -it semaphore /bin/bash"
 }
 failure{
 echo "====++++docker container execution failed++++===="
