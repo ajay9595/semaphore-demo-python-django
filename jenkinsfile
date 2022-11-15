@@ -20,7 +20,6 @@ echo "====++++clone executed successfully++++===="
 failure{
 echo "====++++clone execution failed++++===="
 }
-
 }
 }
 }
