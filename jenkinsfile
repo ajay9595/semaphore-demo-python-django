@@ -4,7 +4,10 @@ agent any
 environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
-	
+
+
+stages{
+
 stage("clone"){
 steps{
 git "https://github.com/varunlamp/semaphore-demo-python-django.git"
@@ -21,8 +24,6 @@ echo "====++++clone execution failed++++===="
 }
 }
 }
-
-stages{
 stage("docker container"){
 steps{
 sh "docker run -itd -p 8732:8732 --name semaphore python:3.10-buster "
@@ -39,7 +40,6 @@ echo "====++++docker container execution failed++++===="
 }
 }
 }
-
 stage("dependency"){
 
 steps{
